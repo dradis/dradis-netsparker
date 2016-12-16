@@ -1,0 +1,2485 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="vulnerabilities-list.xsl" type="text/xsl" ?>
+
+<netsparker generated="12/8/2016 2:56:36 PM">
+	<target>
+		<url>http://localhost:3000/</url>
+		<scantime>18</scantime>
+	</target>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/login</url>
+    <type>PasswordOverHttp</type>
+    <severity>Important</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected that password data is being transmitted over HTTP.</p></description>
+    <remedy><div>All sensitive data should be transferred over HTTPS rather than HTTP. Forms should be served over HTTPS. All aspects of the application that accept user input, starting from the login process, should only be served over HTTPS.</div></remedy>
+
+    <rawrequest><![CDATA[GET /login HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Referer: http://localhost:3000/
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=Z1BMOHFEY2RERDVJUldNL1RqNG92dmJ2bVFNcUwyVm54Z09PTTJEUkhTM0VCOW1Yd3lYNWtRNmNOYTR6cGVRZkgyWXVGcUl2MTg1UERlc3ZWNjBLZHZBRkZzUXJTbER6UTNVTGQ2amdZVmRaZXg4aCtSdXVaVzcrZExGMEVXdC9LaWp6ZE96WWVPWGJ0NmE1cE1WbGQvQXdiczhuUGZNejE5dTF3ekM0WW4wYzF6V2xwenNXdnRvd05YRHF1V0F3NDc3bUdJc0xlYXc5ck53M2FSY2pLNTd3L2I4dEJuS04rNVZrc1k5TXFiREE4WkJQZ1NxRmJMMmJaYlZxRlNlYzhtSHZxRFFIS01KamJ1UjdHUVdYMjlETC9WN1lBMUZERlBLSm5aRU1RWnAzbG05N002NldVTFg0SmY3ZTA1bHctLW9SSGxMblRLc2o5a1VFQTg5N1MzQXc9PQ%3D%3D--8c3350ab21690b49d42705363c23860a196cdae0
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=MFRLazZ0NFFuQUVpamxhbnZJbWpxRThZSVpJUng5L0FPYlRFQy9uUmsxcm4xN0ROZGhNN0ltVmZIejhtQjdBSmIzQTg2cXIwZ3hPUGMxcTRZSXQ4dEdKRmFRTkdwUkpJZG8zbFppZldwRC9TcWF5OWdraHBackJtckVWUGEyZ2poMlVHeXpnWHE0NVR4QXRZaElqbmJXZVJiVWNRck1OUmxKY0xxTkxaVXNmVUVjaUhyRWhackRUbDlJRlJZYjlnLS05SW9kaHlZK1oyOGZlQmg3cUNXdjFRPT0%3D--fec1b0a3d26c80dd3241888bb49365054793188f; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.009771
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: a2e0332c-ac9b-4668-8c98-0590efe7b57e
+Content-Type: text/html; charset=utf-8
+Content-Length: 4617
+Date: Thu, 08 Dec 2016 19:56:16 GMT
+Etag: W/"8d030fd5a6fb923712bfdd6647b81414"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="I6weEBpkwMCXdbHbdfXBPGY4D8CW4Wbtnc+3oCdU9egPc8QJIofJtkdEZtuqjf2A5yhZlMOuoH5PMI+t6fO17w==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+</head>
+<body class="controller-account action-login">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+
+<div id="login-form">
+<form onsubmit="return keepAnchorOnSignIn(this);" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="R6BbMva0XQgJFncuT2APQ+ImLhLrLaZcEVApzVpKGs5rf4ErzldUftknoC6QGDP/YzZ4Rr5iYM/DrxHAlO1ayQ==" />
+<input type="hidden" name="back_url" value="http://localhost:3000/" />
+<table>
+<tr>
+<td style="text-align:right;"><label for="username">Login:</label></td>
+<td style="text-align:left;"><input type="text" name="username" id="username" tabindex="1" /></td>
+</tr>
+<tr>
+<td style="text-align:right;"><label for="password">Password:</label></td>
+<td style="text-align:left;"><input type="password" name="password" id="password" tabindex="2" /></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+      <a href="/account/lost_password">Lost password</a>
+</td>
+<td style="text-align:right;">
+  <input type="submit" name="login" value="Login &#187;" tabindex="5"/>
+</td>
+</tr>
+</table>
+</form></div>
+
+
+<script>
+//<![CDATA[
+$('#username').focus();
+//]]]]><![CDATA[>
+</script>
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+      <info name="Form target action"><![CDATA[/login]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A6</OWASP2013>
+      <WASC>4</WASC>
+      <CWE>319</CWE>
+      <CAPEC>65</CAPEC>
+      <PCI31>6.5.4</PCI31>
+      <PCI32>6.5.4</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC></OWASPPC>
+        <CVSS>
+          <vector>CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N</vector>
+
+          <score>
+            <type>Base</type>
+            <value>5.7</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>5.7</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>5.7</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/</url>
+    <type>SslVersion3Support</type>
+    <severity>Medium</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected that insecure transportation security protocol (SSLv3) is supported by your web server.</p><p>SSLv3 has several flaws. An attacker can cause connection failures and they can trigger the use of SSL 3.0 to exploit vulnerabilities like POODLE.</p></description>
+    <remedy><div><p>Configure your web server to disallow using weak ciphers. You need to restart the web server to enable changes.</p><ul><li>For Apache, adjust the SSLProtocol directive provided by the mod_ssl module. This directive can be set either at the server level or in a virtual host configuration.<pre class="xml code">SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2
+</pre></li><li>For Nginx, locate any use of the directive ssl_protocols in the <code>nginx.conf</code> file and remove <code>SSLv3</code>.<pre class="code">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+</pre></li><li>For Microsoft IIS, you should make some changes on the system registry.<ol><li>Click on Start and then Run, type <code>regedt32</code> or <code>regedit</code>, and then click OK.</li><li>In Registry Editor, locate the following registry key or create if it does not exist:<pre class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\
+</pre></li><li>Locate a key named <code>Server</code> or create if it doesn't exist.</li><li>Under the <code>Server</code> key, locate a DWORD value named <code>Enabled</code> or create if it doesn't exist and set its value to "0".</li></ol></li><li>For Lighttpd, put the following lines in your configuration file:<pre class="code">ssl.use-sslv2 = "disable"
+ssl.use-sslv3 = "disable"
+</pre></li></ul></div></remedy>
+
+    <rawrequest><![CDATA[[NETSPARKER] SSL Connection]]></rawrequest>
+    <rawresponse><![CDATA[[NETSPARKER] SSL Connection]]></rawresponse>
+    <extrainformation>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A6</OWASP2013>
+      <WASC>4</WASC>
+      <CWE>327</CWE>
+      <CAPEC>217</CAPEC>
+      <PCI31>6.5.4</PCI31>
+      <PCI32>6.5.4</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC></OWASPPC>
+
+        <CVSS>
+          <vector>CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N/E:P/RL:O/RC:C</vector>
+
+          <score>
+            <type>Base</type>
+            <value>6.8</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>6.1</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>6.1</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/login</url>
+    <type>AutoCompleteEnabled</type>
+    <severity>Low</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected that autocomplete is enabled in one or more of the form fields which might contain sensitive information like "username", "credit card" or "CVV".</p></description>
+    <remedy></remedy>
+
+    <rawrequest><![CDATA[GET /login HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Referer: http://localhost:3000/
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=Z1BMOHFEY2RERDVJUldNL1RqNG92dmJ2bVFNcUwyVm54Z09PTTJEUkhTM0VCOW1Yd3lYNWtRNmNOYTR6cGVRZkgyWXVGcUl2MTg1UERlc3ZWNjBLZHZBRkZzUXJTbER6UTNVTGQ2amdZVmRaZXg4aCtSdXVaVzcrZExGMEVXdC9LaWp6ZE96WWVPWGJ0NmE1cE1WbGQvQXdiczhuUGZNejE5dTF3ekM0WW4wYzF6V2xwenNXdnRvd05YRHF1V0F3NDc3bUdJc0xlYXc5ck53M2FSY2pLNTd3L2I4dEJuS04rNVZrc1k5TXFiREE4WkJQZ1NxRmJMMmJaYlZxRlNlYzhtSHZxRFFIS01KamJ1UjdHUVdYMjlETC9WN1lBMUZERlBLSm5aRU1RWnAzbG05N002NldVTFg0SmY3ZTA1bHctLW9SSGxMblRLc2o5a1VFQTg5N1MzQXc9PQ%3D%3D--8c3350ab21690b49d42705363c23860a196cdae0
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=MFRLazZ0NFFuQUVpamxhbnZJbWpxRThZSVpJUng5L0FPYlRFQy9uUmsxcm4xN0ROZGhNN0ltVmZIejhtQjdBSmIzQTg2cXIwZ3hPUGMxcTRZSXQ4dEdKRmFRTkdwUkpJZG8zbFppZldwRC9TcWF5OWdraHBackJtckVWUGEyZ2poMlVHeXpnWHE0NVR4QXRZaElqbmJXZVJiVWNRck1OUmxKY0xxTkxaVXNmVUVjaUhyRWhackRUbDlJRlJZYjlnLS05SW9kaHlZK1oyOGZlQmg3cUNXdjFRPT0%3D--fec1b0a3d26c80dd3241888bb49365054793188f; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.009771
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: a2e0332c-ac9b-4668-8c98-0590efe7b57e
+Content-Type: text/html; charset=utf-8
+Content-Length: 4617
+Date: Thu, 08 Dec 2016 19:56:16 GMT
+Etag: W/"8d030fd5a6fb923712bfdd6647b81414"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="I6weEBpkwMCXdbHbdfXBPGY4D8CW4Wbtnc+3oCdU9egPc8QJIofJtkdEZtuqjf2A5yhZlMOuoH5PMI+t6fO17w==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+</head>
+<body class="controller-account action-login">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+
+<div id="login-form">
+<form onsubmit="return keepAnchorOnSignIn(this);" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="R6BbMva0XQgJFncuT2APQ+ImLhLrLaZcEVApzVpKGs5rf4ErzldUftknoC6QGDP/YzZ4Rr5iYM/DrxHAlO1ayQ==" />
+<input type="hidden" name="back_url" value="http://localhost:3000/" />
+<table>
+<tr>
+<td style="text-align:right;"><label for="username">Login:</label></td>
+<td style="text-align:left;"><input type="text" name="username" id="username" tabindex="1" /></td>
+</tr>
+<tr>
+<td style="text-align:right;"><label for="password">Password:</label></td>
+<td style="text-align:left;"><input type="password" name="password" id="password" tabindex="2" /></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+      <a href="/account/lost_password">Lost password</a>
+</td>
+<td style="text-align:right;">
+  <input type="submit" name="login" value="Login &#187;" tabindex="5"/>
+</td>
+</tr>
+</table>
+</form></div>
+
+
+<script>
+//<![CDATA[
+$('#username').focus();
+//]]]]><![CDATA[>
+</script>
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Field Name"><![CDATA[username]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A5</OWASP2013>
+      <WASC>15</WASC>
+      <CWE>16</CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC></OWASPPC>
+
+        <CVSS>
+          <vector>CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
+
+          <score>
+            <type>Base</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>VersionDisclosureRuby</type>
+    <severity>Low</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified that the target web server is disclosing the Ruby version in its HTTP response. This information might help an attacker gain a greater understanding of the systems in use and potentially develop further attacks targeted at the specific version of Ruby.</p></description>
+    <remedy><div>Configure your web server to prevent information leakage from its HTTP response.</div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="ExtractedVersion"><![CDATA[2.3.0]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC>45</WASC>
+      <CWE>205</CWE>
+      <CAPEC>170</CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA>164.306(a), 164.308(a)</HIPAA>
+      <OWASPPC></OWASPPC>
+
+        <CVSS>
+          <vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</vector>
+
+          <score>
+            <type>Base</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>VersionDisclosureWebrick</type>
+    <severity>Low</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified that the target web server is disclosing the WEBrick version in its HTTP response. This information might help an attacker gain a greater understanding of the systems in use and potentially develop further attacks targeted at the specific version of WEBrick.</p></description>
+    <remedy><div>Configure your web server to prevent information leakage from its HTTP response.</div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="ExtractedVersion"><![CDATA[1.3.1]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC>45</WASC>
+      <CWE>205</CWE>
+      <CAPEC>170</CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA>164.306(a), 164.308(a)</HIPAA>
+      <OWASPPC></OWASPPC>
+
+        <CVSS>
+          <vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</vector>
+
+          <score>
+            <type>Base</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>5.3</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/</url>
+    <type>TlsVersion1Support</type>
+    <severity>Low</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected that insecure transportation security protocol (TLS 1.0) is supported by your web server.</p><p>TLS 1.0 has several flaws. An attacker can cause connection failures and they can trigger the use of TLS 1.0 to exploit vulnerabilities like BEAST (Browser Exploit Against SSL/TLS).</p><p>Websites using TLS 1.0 will be considered non-compliant by PCI after 30 June 2018.</p></description>
+    <remedy><div><p>Configure your web server to disallow using weak ciphers. You need to restart the web server to enable changes.</p><ul><li>For Apache, adjust the SSLProtocol directive provided by the mod_ssl module. This directive can be set either at the server level or in a virtual host configuration.<pre class="xml code">SSLProtocol +TLSv1.1 +TLSv1.2
+</pre></li><li>For Nginx, locate any use of the directive ssl_protocols in the <code>nginx.conf</code> file and remove <code>TLSv1</code>.<pre class="code">ssl_protocols TLSv1.1 TLSv1.2;
+</pre></li><li>For Microsoft IIS, you should make some changes on the system registry.<ol><li>Click on Start and then Run, type <code>regedt32</code> or <code>regedit</code>, and then click OK.</li><li>In Registry Editor, locate the following registry key or create if it does not exist:<pre class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\
+</pre></li><li>Locate a key named <code>Server</code> or create if it doesn't exist.</li><li>Under the <code>Server</code> key, locate a DWORD value named <code>Enabled</code> or create if it doesn't exist and set its value to "0".</li></ol></li></ul></div></remedy>
+
+    <rawrequest><![CDATA[[NETSPARKER] SSL Connection]]></rawrequest>
+    <rawresponse><![CDATA[[NETSPARKER] SSL Connection]]></rawresponse>
+    <extrainformation>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A6</OWASP2013>
+      <WASC>4</WASC>
+      <CWE>327</CWE>
+      <CAPEC>217</CAPEC>
+      <PCI31>6.5.4</PCI31>
+      <PCI32>6.5.4</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC></OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/robots.txt</url>
+    <type>RobotsIdentified</type>
+    <severity>Information</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected a <code>Robots.txt</code> file with potentially sensitive content.</p></description>
+    <remedy><div><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Ensure you have nothing sensitive exposed within this file, such as the path of an administration panel. If disallowed paths are sensitive and you want to keep it from unauthorized access, do not write them in the <code>Robots.txt</code>, and ensure they are correctly protected by means of authentication.</span></div><div><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;"><code>Robots.txt</code> is only used to instruct search robots which resources should be indexed and which ones are not.</span></p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">The following block can be used to tell the crawler to index files under /web/ and </span><strong>ignore the rest</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">:</span><br></div><pre>User-Agent: *<br>Allow: /web/<br>Disallow: /</pre><div><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Please note that when you use the instructions above, </span><strong>search engines will not index your website </strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">except for the specified directories.</span></p><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">If you want to hide certain section of the website from the search engines <code>X-Robots-Tag</code> can be set in the response header to tell crawlers whether the file should be indexed or not:</span><br></p></div><pre>X-Robots-Tag: googlebot: nofollow<br>X-Robots-Tag: otherbot: noindex, nofollow<br></pre><div><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">By using <code>X-Robots-Tag</code> you don't have to list the these files in your <code>Robots.txt</code>. </span></p><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">It is also not possible to prevent media files from being indexed by putting using Robots Meta Tags. <code>X-Robots-Tag</code> resolves this issue as well.</span></p><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">For Apache, the following snippet can be put into <code>httpd.conf</code> or an <code>.htaccess</code> file to restrict crawlers to index multimedia files without exposing them in <code>Robots.txt</code></span><br></p></div><pre>&lt;Files ~ "\.pdf$"&gt;<br># Don't index PDF files.<br> Header set X-Robots-Tag "noindex, nofollow"<br>&lt;/Files&gt;</pre><pre>&lt;Files ~ "\.(png|jpe?g|gif)$"&gt;<br>#Don't index image files.<br> Header set X-Robots-Tag "noindex"<br>&lt;/Files&gt;</pre><div>&nbsp;<br></div></remedy>
+
+    <rawrequest><![CDATA[GET /robots.txt HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=dXFGaE1aakY4ZWxQV0ZiMVlmaWtaUTBpYlQrOVlkWWUxOUtuYlJZMHgwT3ZFUlZheVJmSnQ2SUllUi9hYktZOWU5OFhGTjJ6S1V2NHZxd21vLzhwUDBDZXZZVjdmeFZaOXA1emprRktNODQ4SW9OV3JSWUZrYllRWXpxSjFHazcrMVFBNFova2JQNnBIK0N5YmpvRGZhOWVLVEY0RHJkRjBIL3NScmZGOHZISFcvM0lOSHBVVnlEK3dYaDNmVFFtV3FBb216T0V2aE0zdVpQRUZweDRZbDdncWN4TWxjYjZoRzByejQ5YlFzR2FpaHNUS1poM1JaOWV6YWJpWkl2NmhBM0Z2cmt0TzQzMnZ1YVIvUm5FdmNOUTgvOUFpV1lKSVloaVkvZkM5eDFiK0l1SXNHUzhhSlMwTExHYjBSM0gtLXdzSDI3Q1NNRllPK0FmRjI0cnZkVmc9PQ%3D%3D--054cb1c4bd8ee505c94de1d15b77d628ee5202ae
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=TEVOVmFFcm11RCtqT1lLZFdPUTh1QkRPTEZCdEhOVWNwbW56Wnl1bGpDT2pFWUFIQ0x6NjQyN0tYWDFwRW9tRWtVWnFXYXlEUzZYQXFKODkxRlNMVlVxYUlGVktmaUNLYmdaeVJnMjBGT2FlRXNmK0FXR3V4ZlhLaUJvMVZ5QmoxVE5Ec1A3M2Q2cXRIZ2FOYm5VUTZvcjdRelJ1elhpdGUxWG1nd09sU2NDZGlpcjU0blNWSVhreVNsb3dOWDhQdVBjVWJ3K0U2bkQrTmlyUEpNWmdpN2xIMFpNS2J2K1NVVGkzalBPSk5EQlNSeDY5Nk5aSzVFbEJkUHNhbVZWVHNWZkEya3FPeUduUlo0aEdOVHpaSWxWV3JLMkliZnE3N0tKRUJzOVo1aHI0a2x6emE1VzJtV3lRNnE4VGVQaWMtLXJvRmM4VnRDTFZJTHI4dm4vLzVnU1E9PQ%3D%3D--54b4336d57a06867496da46514052a428dfe476f; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.004503
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: d322a824-0038-4e11-b073-c7d6a4d31580
+Content-Type: text/html; charset=utf-8
+Content-Length: 103
+Date: Thu, 08 Dec 2016 19:56:14 GMT
+Etag: W/"e5d026a5a27744c1c3d9c77b3e035178"
+Cache-Control: max-age=0, private, must-revalidate
+
+User-agent: *
+Disallow: /issues/gantt
+Disallow: /issues/calendar
+Disallow: /activity
+Disallow: /search
+]]></rawresponse>
+    <extrainformation>
+        <info name="Interesting Robots.txt Entries"><![CDATA[Disallow: /issues/gantt, Disallow: /issues/calendar, Disallow: /activity, Disallow: /search]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C7</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/login</url>
+    <type>AutoCompleteEnabledPasswordField</type>
+    <severity>Information</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected that autocomplete is enabled in one or more of the password fields.</p></description>
+    <remedy></remedy>
+
+    <rawrequest><![CDATA[GET /login HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Referer: http://localhost:3000/
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=Z1BMOHFEY2RERDVJUldNL1RqNG92dmJ2bVFNcUwyVm54Z09PTTJEUkhTM0VCOW1Yd3lYNWtRNmNOYTR6cGVRZkgyWXVGcUl2MTg1UERlc3ZWNjBLZHZBRkZzUXJTbER6UTNVTGQ2amdZVmRaZXg4aCtSdXVaVzcrZExGMEVXdC9LaWp6ZE96WWVPWGJ0NmE1cE1WbGQvQXdiczhuUGZNejE5dTF3ekM0WW4wYzF6V2xwenNXdnRvd05YRHF1V0F3NDc3bUdJc0xlYXc5ck53M2FSY2pLNTd3L2I4dEJuS04rNVZrc1k5TXFiREE4WkJQZ1NxRmJMMmJaYlZxRlNlYzhtSHZxRFFIS01KamJ1UjdHUVdYMjlETC9WN1lBMUZERlBLSm5aRU1RWnAzbG05N002NldVTFg0SmY3ZTA1bHctLW9SSGxMblRLc2o5a1VFQTg5N1MzQXc9PQ%3D%3D--8c3350ab21690b49d42705363c23860a196cdae0
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=MFRLazZ0NFFuQUVpamxhbnZJbWpxRThZSVpJUng5L0FPYlRFQy9uUmsxcm4xN0ROZGhNN0ltVmZIejhtQjdBSmIzQTg2cXIwZ3hPUGMxcTRZSXQ4dEdKRmFRTkdwUkpJZG8zbFppZldwRC9TcWF5OWdraHBackJtckVWUGEyZ2poMlVHeXpnWHE0NVR4QXRZaElqbmJXZVJiVWNRck1OUmxKY0xxTkxaVXNmVUVjaUhyRWhackRUbDlJRlJZYjlnLS05SW9kaHlZK1oyOGZlQmg3cUNXdjFRPT0%3D--fec1b0a3d26c80dd3241888bb49365054793188f; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.009771
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: a2e0332c-ac9b-4668-8c98-0590efe7b57e
+Content-Type: text/html; charset=utf-8
+Content-Length: 4617
+Date: Thu, 08 Dec 2016 19:56:16 GMT
+Etag: W/"8d030fd5a6fb923712bfdd6647b81414"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="I6weEBpkwMCXdbHbdfXBPGY4D8CW4Wbtnc+3oCdU9egPc8QJIofJtkdEZtuqjf2A5yhZlMOuoH5PMI+t6fO17w==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+</head>
+<body class="controller-account action-login">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+
+<div id="login-form">
+<form onsubmit="return keepAnchorOnSignIn(this);" action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="R6BbMva0XQgJFncuT2APQ+ImLhLrLaZcEVApzVpKGs5rf4ErzldUftknoC6QGDP/YzZ4Rr5iYM/DrxHAlO1ayQ==" />
+<input type="hidden" name="back_url" value="http://localhost:3000/" />
+<table>
+<tr>
+<td style="text-align:right;"><label for="username">Login:</label></td>
+<td style="text-align:left;"><input type="text" name="username" id="username" tabindex="1" /></td>
+</tr>
+<tr>
+<td style="text-align:right;"><label for="password">Password:</label></td>
+<td style="text-align:left;"><input type="password" name="password" id="password" tabindex="2" /></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+      <a href="/account/lost_password">Lost password</a>
+</td>
+<td style="text-align:right;">
+  <input type="submit" name="login" value="Login &#187;" tabindex="5"/>
+</td>
+</tr>
+</table>
+</form></div>
+
+
+<script>
+//<![CDATA[
+$('#username').focus();
+//]]]]><![CDATA[>
+</script>
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Field Name"><![CDATA[password]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A5</OWASP2013>
+      <WASC>15</WASC>
+      <CWE>16</CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC></OWASPPC>
+
+        <CVSS>
+          <vector>CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</vector>
+
+          <score>
+            <type>Base</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Temporal</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+          <score>
+            <type>Environmental</type>
+            <value>4.6</value>
+            <severity>Medium</severity>
+          </score>
+
+        </CVSS>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>RubyOutOfDate</type>
+    <severity>Information</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified the target web site is using Ruby and detected that it is out of date.</p></description>
+    <remedy><div><p>Please upgrade your installation of Ruby to the latest stable version.</p></div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Version"><![CDATA[2.3.0]]></info>
+        <info name="Latest Version"><![CDATA[2.3.1]]></info>
+        <info name="Vulnerability Database"><![CDATA[Result is based on 10/27/2016 vulnerability database content.]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A9</OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC>310</CAPEC>
+      <PCI31>6.2</PCI31>
+      <PCI32>6.2</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C1</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>JqueryOutOfDate</type>
+    <severity>Information</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified the target web site is using jQuery and detected that it is out of date.</p></description>
+    <remedy><div><p>Please upgrade your installation of jQuery to the latest stable version.</p></div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Version"><![CDATA[1.11.1]]></info>
+        <info name="Latest Version"><![CDATA[1.12.4]]></info>
+        <info name="Vulnerability Database"><![CDATA[Result is based on 10/27/2016 vulnerability database content.]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A9</OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC>310</CAPEC>
+      <PCI31>6.2</PCI31>
+      <PCI32>6.2</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C1</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>JqueryUiDialogOutOfDate</type>
+    <severity>Information</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified the target web site is using jQuery UI Dialog and detected that it is out of date.</p></description>
+    <remedy><div><p>Please upgrade your installation of jQuery UI Dialog to the latest stable version.</p></div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Version"><![CDATA[1.11.0]]></info>
+        <info name="Latest Version"><![CDATA[1.12.1]]></info>
+        <info name="Vulnerability Database"><![CDATA[Result is based on 10/27/2016 vulnerability database content.]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A9</OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC>310</CAPEC>
+      <PCI31>6.2</PCI31>
+      <PCI32>6.2</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C1</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>JqueryUiAutocompleteOutOfDate</type>
+    <severity>Information</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified the target web site is using jQuery UI Autocomplete and detected that it is out of date.</p></description>
+    <remedy><div><p>Please upgrade your installation of jQuery UI Autocomplete to the latest stable version.</p></div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Version"><![CDATA[1.11.0]]></info>
+        <info name="Latest Version"><![CDATA[1.12.1]]></info>
+        <info name="Vulnerability Database"><![CDATA[Result is based on 10/27/2016 vulnerability database content.]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A9</OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC>310</CAPEC>
+      <PCI31>6.2</PCI31>
+      <PCI32>6.2</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C1</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>JqueryUiTooltipOutOfDate</type>
+    <severity>Information</severity>
+    <certainty>90</certainty>
+    <description><p>{PRODUCT} identified the target web site is using jQuery UI Tooltip and detected that it is out of date.</p></description>
+    <remedy><div><p>Please upgrade your installation of jQuery UI Tooltip to the latest stable version.</p></div></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Version"><![CDATA[1.11.0]]></info>
+        <info name="Latest Version"><![CDATA[1.12.1]]></info>
+        <info name="Vulnerability Database"><![CDATA[Result is based on 10/27/2016 vulnerability database content.]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013>A9</OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC>310</CAPEC>
+      <PCI31>6.2</PCI31>
+      <PCI32>6.2</PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C1</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/javascripts/</url>
+    <type>MissingXssProtectionHeader</type>
+    <severity>Information</severity>
+    <certainty>100</certainty>
+    <description><p>{PRODUCT} detected a missing <code>X-XSS-Protection</code> header which means that this website could be at risk of a Cross-site Scripting (XSS) attacks.</p></description>
+    <remedy><div>Add the X-XSS-Protection header with a value of "1; mode= block".<ul><li><pre class="code">X-XSS-Protection: 1; mode=block</pre></li></ul></div></remedy>
+
+    <rawrequest><![CDATA[GET /javascripts/ HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=dXFGaE1aakY4ZWxQV0ZiMVlmaWtaUTBpYlQrOVlkWWUxOUtuYlJZMHgwT3ZFUlZheVJmSnQ2SUllUi9hYktZOWU5OFhGTjJ6S1V2NHZxd21vLzhwUDBDZXZZVjdmeFZaOXA1emprRktNODQ4SW9OV3JSWUZrYllRWXpxSjFHazcrMVFBNFova2JQNnBIK0N5YmpvRGZhOWVLVEY0RHJkRjBIL3NScmZGOHZISFcvM0lOSHBVVnlEK3dYaDNmVFFtV3FBb216T0V2aE0zdVpQRUZweDRZbDdncWN4TWxjYjZoRzByejQ5YlFzR2FpaHNUS1poM1JaOWV6YWJpWkl2NmhBM0Z2cmt0TzQzMnZ1YVIvUm5FdmNOUTgvOUFpV1lKSVloaVkvZkM5eDFiK0l1SXNHUzhhSlMwTExHYjBSM0gtLXdzSDI3Q1NNRllPK0FmRjI0cnZkVmc9PQ%3D%3D--054cb1c4bd8ee505c94de1d15b77d628ee5202ae
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 404 Not Found
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Runtime: 0.001726
+Connection: Keep-Alive
+Content-Length: 459
+X-Request-Id: aa38d534-7b20-4836-afa1-f2500d266718
+Content-Type: text/html; charset=utf-8
+Date: Thu, 08 Dec 2016 19:56:14 GMT
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Redmine 404 error</title>
+<style>
+body {font-family: "Trebuchet MS", Georgia, "Times New Roman", serif; color: #303030; margin: 10px;}
+h1 {font-size:1.5em;}
+p {font-size:0.8em;}
+</style>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>The page you were trying to access doesn't exist or has been removed.</p>
+<p><a href="javascript:history.back()">Back</a></p>
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA>164.308(a)</HIPAA>
+      <OWASPPC>C9</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="True">
+    <url>http://localhost:3000/</url>
+    <type>SameSiteCookieNotImplemented</type>
+    <severity>Information</severity>
+    <certainty>100</certainty>
+    <description><p>Cookies are typically sent to third parties in cross origin requests. This can be abused to do CSRF attacks. Recently a new cookie attribute named <em>SameSite</em> was proposed to disable third-party usage for some cookies, to prevent CSRF attacks.</p><p>Same-site cookies allow servers to mitigate the risk of CSRF and information leakage attacks by asserting that a particular cookie should only be sent with requests initiated from the same registrable domain.</p></description>
+    <remedy><p>The server can set a same-site cookie by adding the SameSite=... attribute to the Set-Cookie header:</p><div><pre>Set-Cookie: key=value; SameSite=strict</pre></div><p>There are two possible values for the same-site attribute:</p><ul><li>Lax</li><li>Strict</li></ul><p>In the strict mode, the cookie is not sent with any cross-site usage even if the user follows a link to another website. Lax cookies are only sent with a top-level get request.</p></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+        <info name="Identified Cookie(s)"><![CDATA[_redmine_session]]></info>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C9</OWASPPC>
+    </classification>
+  </vulnerability>
+  <vulnerability confirmed="False">
+    <url>http://localhost:3000/</url>
+    <type>CspNotImplemented</type>
+    <severity>Information</severity>
+    <certainty>100</certainty>
+    <description><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">CSP is a added layer of security against that helps to mitigate mainly Cross-site Scripting attacks. </span></p><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">CSP can be enabled instructing the browser with a Content-Security-Policy directive in a response header;</span></p><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;"> Content-Security-Policy: script-src 'self';</span></pre><p>or in a meta tag;</p><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;">&lt;meta http-equiv="Content-Security-Policy" content="script-src 'self';"&gt; </span></pre><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">In the above example, you can restrict script loading only to same domain. It will also restrict inline script executions both in element attribute and event handler. There are various directives which you can use declaring CSP:</span></p><ul><li style="text-align: justify;" data-mce-style="text-align: justify;"><strong>script-src:</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;"> Restricts the script loading resources to the ones you declared. By default, it disables inline script executions unless you permit to the evaluation functions and inline scripts by the unsafe-eval and unsafe-inline keywords.</span></li><li style="text-align: justify;" data-mce-style="text-align: justify;"><strong>base-uri:</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;"> &nbsp;Base element is used to resolve relative URL to absolute one. By using this CSP directive, you can define all possible URLs which could be assigned to base-href attribute of the document. </span></li><li><strong>frame-ancestors</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: &nbsp;It is very similar to X-Frame-Options HTTP header. It defines the URLs by which the page can be loaded in an iframe.</span></li><li><strong>frame-src &nbsp;&nbsp;/ child-src</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: frame-src is the deprecated version of child-src. Both define the sources that can be loaded by iframe in the page.</span></li><li><strong>object-src</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;"> : Defines the resources that can be loaded by embedding such as Flash files, Java Applets.</span></li><li><strong>img-src</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: As its name implies, it defines the resources where the images can be loaded from.</span></li><li><strong>connect-src</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: Defines the whitelisted targets for XMLHttpRequest and WebSocket objects.</span></li><li><strong>default-src</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: It is a fallback for the directives that mostly ends with -src prefix. When the directives below are not defined, the value set to default-src will be used:</span></li><ul><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">child-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">connect-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">font-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">img-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">manifest-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">media-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">object-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">script-src</span></li><li><span style="font-weight: 400;" data-mce-style="font-weight: 400;">style-src</span></li></ul></ul><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">When setting the CSP directives, you can also use some CSP keywords: </span></p><ul><li style="padding-left: 30px;" data-mce-style="padding-left: 30px;"><strong>none</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: When used, it denies all resources loadings.</span></li><li style="padding-left: 30px;" data-mce-style="padding-left: 30px;"><strong>self </strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: It points to the document's URL (domain + port).</span></li><li style="padding-left: 30px;" data-mce-style="padding-left: 30px;"><strong>unsafe-inline</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: It permits running inline scripts . </span></li><li style="padding-left: 30px;" data-mce-style="padding-left: 30px;"><strong>unsafe-eval</strong><span style="font-weight: 400;" data-mce-style="font-weight: 400;">: It permits execution of evaluations function such as <code>eval()</code>.</span></li></ul><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">In addition to CSP keywords, you can also use wildcard or only a schema when defining whitelist URLs for the points. Wildcard can be used for subdomain and port portions of the URLs:</span></p><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Content-Security-Policy: script-src </span><a href="about:blank" data-mce-href="about:blank"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">https://*.example.com</span></a><span style="font-weight: 400;" data-mce-style="font-weight: 400;">;</span></pre><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Content-Security-Policy: script-src </span><a href="about:blank" data-mce-href="about:blank"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">https://example.com</span></a><span style="font-weight: 400;" data-mce-style="font-weight: 400;">:*;</span></pre><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Content-Security-Policy: script-src https;</span></pre><p style="text-align: justify;" data-mce-style="text-align: justify;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">It is also possible to set a CSP in Report-Only mode instead of forcing it immediately in the migration period. Thus you can see the violations of the CSP policy in the current state of your web site while migrating to CSP:</span></p><pre><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Content-Security-Policy-Report-Only: script-src 'self'; report-uri: <a href="https://example.com" data-mce-href="https://example.com">https://example.com</a>;</span></pre></description>
+    <remedy><p><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Enable CSP on your website by sending the </span><code><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Content-Security-Policy</span></code><span style="font-weight: 400;" data-mce-style="font-weight: 400;"> in HTTP response headers that instruct the browser to apply the policies you specified.</span></p></remedy>
+
+    <rawrequest><![CDATA[GET / HTTP/1.1
+Host: localhost:3000
+Cache-Control: no-cache
+Connection: Keep-Alive
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+    <rawresponse><![CDATA[HTTP/1.1 200 OK
+Set-Cookie: _redmine_session=NVU5aUwyZ0VRTndIb21Va2pNZk15SXRyeXpGOWZtMk5rS1QwaVFpSi9vSkh1Lyt3U1lzcTdlOS8wYkdUTE1JMjVQNmp5dHU0akM0L0pmdDZRalkvdkVDbzdqOC9qOHRJRG1CSllNcENBMkkxbGJ0ODd1RXZwL0drNVRCbkZwYVFHQVVTWWtGQXY5eXBwdzJTQnBuVXpCMWFOVEZHOFVTeVFDUmJmekhEU3NGK3JGMlFsTytCRFpIemx2bkJCZzViLS1CV295alVPcnRJaUhDY2UxVmRLOWt3PT0%3D--374cb50cbcce265e356b52f82eadb8c778158726; path=/; HttpOnly
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+X-Content-Type-Options: nosniff
+X-Runtime: 0.015338
+Connection: Keep-Alive
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 9c7ebeb0-d69c-4315-ba90-5e154e2eebed
+Content-Type: text/html; charset=utf-8
+Content-Length: 3876
+Date: Thu, 08 Dec 2016 19:56:08 GMT
+Etag: W/"58de55885d9765a460c7728ca5cce1da"
+Cache-Control: max-age=0, private, must-revalidate
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>HNL Security Team Project Tracking System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TV0QvO/RZcDnbKGv7N8Aq6rDRRfrL8sFjLxwBAonrSZhgsql1zJstjdddq8zpzwXK9MTQ75gDZZeQ0gJxIDtIQ==" />
+<link rel='shortcut icon' href='/favicon.ico' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]]]><![CDATA[>
+</script>
+
+
+<!-- page specific tags -->
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Latest news" href="http://localhost:3000/news.atom" />
+<link rel="alternate" type="application/atom+xml" title="HNL Security Team Project Tracking System: Activity" href="http://localhost:3000/activity.atom" />
+</head>
+<body class="controller-welcome action-index">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+  <div class="flyout-menu__search">
+      <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+      <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+      <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+
+<h3>General</h3>
+<span class="js-general-menu"></span>
+
+<span class="js-sidebar flyout-menu__sidebar"></span>
+
+<h3>Profile</h3>
+<span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+<div id="account">
+  <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+
+<ul><li><a class="home" href="/">Home</a></li><li><a class="projects" href="/projects">Projects</a></li><li><a class="help" href="https://www.redmine.org/guide">Help</a></li></ul></div>
+
+<div id="header">
+
+<a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+<div id="quick-search">
+  <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+  <label for='q'>
+    <a accesskey="4" href="/search">Search</a>:
+  </label>
+  <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>
+</div>
+
+<h1>HNL Security Team Project Tracking System</h1>
+
+</div>
+
+<div id="main" class="nosidebar">
+<div id="sidebar">
+
+
+</div>
+
+<div id="content">
+
+  <h2>Home</h2>
+
+<div class="splitcontentleft">
+<div class="wiki">
+
+</div>
+
+</div>
+
+<div class="splitcontentright">
+
+</div>
+
+
+
+  <div style="clear:both;"></div>
+</div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<div class="bgl"><div class="bgr">
+Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2016 Jean-Philippe Lang
+</div></div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
+]]></rawresponse>
+    <extrainformation>
+    </extrainformation>
+
+    <proofs></proofs>
+
+    <classification>
+      <OWASP2013></OWASP2013>
+      <WASC></WASC>
+      <CWE></CWE>
+      <CAPEC></CAPEC>
+      <PCI31></PCI31>
+      <PCI32></PCI32>
+      <HIPAA></HIPAA>
+      <OWASPPC>C9</OWASPPC>
+    </classification>
+  </vulnerability>
+</netsparker>

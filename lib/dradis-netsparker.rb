@@ -5,3 +5,4 @@ require 'dradis-plugins'
 require 'dradis/plugins/netsparker'
 
 # load supporting Netsparker classes
+require 'netsparker/vulnerability'

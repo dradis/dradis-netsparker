@@ -1,0 +1,16 @@
+issue.certainty
+issue.classification_capec
+issue.classification_cwe
+issue.classification_hipaa
+issue.classification_owasp2013
+issue.classification_owasppc
+issue.classification_pci31
+issue.classification_pci32
+issue.classification_wasc
+issue.description
+issue.rawrequest
+issue.rawresponse
+issue.remedy
+issue.severity
+issue.title
+issue.type

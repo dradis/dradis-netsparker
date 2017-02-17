@@ -18,13 +18,21 @@ module Dradis::Plugins::Netsparker
         return false
       end
 
-      # @doc.xpath('/ScanGroup/Scan').each do |xml_scan|
-      #   process_scan(xml_scan)
-      # end
+      @doc.xpath('/netsparker/vulnerability').each do |xml_vuln|
+        process_vulnerability(xml_vuln)
+      end
 
       return true
     end # /import
 
     private
+    def process_vulnerability(xml_vuln)
+      type = xml_vuln.at_xpath('./type').text()
+
+      logger.info{ "\t\t => Creating new issue (type: #{type})" }
+
+      issue_text = template_service.process_template(template: 'issue', data: xml_vuln)
+      issue = content_service.create_issue(text: issue_text, id: type + rand(3).to_s)
+    end
   end
 end

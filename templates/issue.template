@@ -1,0 +1,21 @@
+#[Title]#
+%issue.type%
+
+#[Severity]#
+%issue.severity%
+
+#[Certainty]#
+%issue.certainty%
+
+#[Description]#
+%issue.description%
+
+#[Remedy]#
+%issue.remedy%
+
+
+#[Request]#
+bc.. %issue.rawrequest%
+
+#[Response]#
+bc.. %issue.rawresponse%

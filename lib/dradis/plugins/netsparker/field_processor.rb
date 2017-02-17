@@ -4,6 +4,7 @@ module Dradis::Plugins::Netsparker
   class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
 
     def post_initialize(args={})
+      @netsparker_object = Netsparker::Vulnerability.new(data)
     end
 
     def value(args={})
@@ -13,7 +14,7 @@ module Dradis::Plugins::Netsparker
       # is common across all fields for a given template (and meaningless).
       _, name = field.split('.')
 
-      # @netsparker_object.try(name) || 'n/a'
+      @netsparker_object.try(name) || 'n/a'
     end
   end
 

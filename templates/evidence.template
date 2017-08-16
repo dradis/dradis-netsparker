@@ -1,5 +1,8 @@
+#[URL]#
+%evidence.url%
+
 #[Request]#
-bc.. %issue.rawrequest%
+bc.. %evidence.rawrequest%
 
 #[Response]#
-bc.. %issue.rawresponse%
+bc.. %evidence.rawresponse%

@@ -13,9 +13,3 @@
 #[Remedy]#
 %issue.remedy%
 
-
-#[Request]#
-bc.. %issue.rawrequest%
-
-#[Response]#
-bc.. %issue.rawresponse%

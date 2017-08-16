@@ -1,0 +1,55 @@
+<vulnerability confirmed="False">
+  <url>http://test.testlab.com:3000/</url>
+  <type>MissingXssProtectionHeader</type>
+  <severity>Information</severity>
+  <certainty>100</certainty>
+  ​<description><![CDATA[<p>Netsparker detected a missing <code>X-XSS-Protection</code> header which means that this website could be at risk of a Cross-site Scripting (XSS) attacks.</p>]]></description>
+  <remedy><![CDATA[<div>Add the X-XSS-Protection header with a value of "1; mode= block".<ul><li><pre class="code">X-XSS-Protection: 1; mode=block</pre></li></ul></div>]]></remedy>
+
+  <rawrequest><![CDATA[GET /javascripts/responsive.js HTTP/1.1
+Host: test.testlab.com:3000
+Cache-Control: no-cache
+Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.16 Safari/537.36
+Accept-Language: en-us,en;q=0.5
+X-Scanner: Netsparker
+Cookie: _redmine_session=V2tvR3dUZ
+Accept-Encoding: gzip, deflate
+
+]]></rawrequest>
+  <rawresponse><![CDATA[HTTP/1.1 200 OK
+Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
+Connection: Keep-Alive
+Content-Length: 2002
+Last-Modified: Sun, 19 Jun 2016 12:47:24 GMT
+Content-Type: application/javascript
+Date: Wed, 08 Feb 2017 20:49:45 GMT
+
+// generic layout specific responsive stuff goes here
+
+function openFlyout() {
+  $('html').addClass('flyout-is-active');
+  $('#wrapper2').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    closeFlyout();
+  });
+}
+]]></rawresponse>
+  <extrainformation></extrainformation>
+
+  <proofs></proofs>
+
+
+  <classification>
+    <OWASP2013></OWASP2013>
+    <WASC></WASC>
+    <CWE></CWE>
+    <CAPEC></CAPEC>
+    <PCI31></PCI31>
+    <PCI32></PCI32>
+    <HIPAA>164.308(a)</HIPAA>
+    <OWASPPC>C9</OWASPPC>
+  </classification>
+
+</vulnerability>

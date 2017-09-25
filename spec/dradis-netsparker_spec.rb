@@ -6,15 +6,18 @@ module Dradis::Plugins
     before(:each) do
       # Stub template service
       templates_dir = File.expand_path('../../templates', __FILE__)
-      allow_any_instance_of(TemplateService).to \
+      expect_any_instance_of(TemplateService).to \
         receive(:default_templates_dir).and_return(templates_dir)
 
-      @content_service = ContentService.new(plugin: Netsparker)
-      template_service = TemplateService.new(plugin: Netsparker)
+      plugin = Dradis::Plugins::Netsparker
 
-      @importer = Netsparker::Importer.new(
-        content_service: @content_service,
-        template_service: template_service
+      @content_service = Dradis::Plugins::ContentService::Base.new(
+        logger: Logger.new(STDOUT),
+        plugin: plugin
+      )
+
+      @importer = Dradis::Plugins::Netsparker::Importer.new(
+        content_service: @content_service
       )
 
       # Stub dradis-plugins methods
@@ -35,9 +38,48 @@ module Dradis::Plugins
       end
     end
 
-    it "creates nodes, issues, notes and an evidences as needed" do
-      pending
+    it "creates the expected Node, Issue, and Evidence from the example file" do
+      expect(@content_service).to receive(:create_node).with(hash_including label: 'localhost', type: :host)
+
+      expect(@content_service).to receive(:create_issue) do |args|
+        expect(args[:text]).to include("#[Title]#\nPassword over http")
+        expect(args[:id]).to eq("PasswordOverHttp")
+        OpenStruct.new(args)
+      end
+
+      expect(@content_service).to receive(:create_evidence) do |args|
+        expect(args[:content]).to include("#[Request]#\nbc.. GET /login HTTP/1.1")
+        expect(args[:issue].id).to eq("PasswordOverHttp")
+        expect(args[:node].label).to eq("localhost")
+      end
+
+      @importer.import(file: 'spec/fixtures/files/example.xml')
+    end
+
+    it "creates than one instance of Evidence for a single Issue" do
+      expect(@content_service).to receive(:create_node).with(hash_including label: 'snorby.org', type: :host)
+
+      expect(@content_service).to receive(:create_issue) do |args|
+        expect(args[:text]).to include("#[Title]#\nEmail disclosure")
+        expect(args[:id]).to eq("EmailDisclosure")
+        OpenStruct.new(args)
+      end
+
+      expect(@content_service).to receive(:create_evidence) do |args|
+        expect(args[:content]).to include("#[URL]#\nhttps://snorby.org/foo")
+        expect(args[:issue].id).to eq("EmailDisclosure")
+        expect(args[:node].label).to eq("snorby.org")
+      end.once
+
+      expect(@content_service).to receive(:create_evidence) do |args|
+        expect(args[:content]).to include("#[URL]#\nhttps://snorby.org/bar")
+        expect(args[:issue].id).to eq("EmailDisclosure")
+        expect(args[:node].label).to eq("snorby.org")
+      end.once
+
+      @importer.import(file: 'spec/fixtures/files/example-evidence.xml')
     end
 
   end
+
 end

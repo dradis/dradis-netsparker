@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="vulnerabilities-list.xsl" type="text/xsl" ?>
+
+<netsparker generated="1.2.2017 12:34:45">
+	<target>
+		<url>https://snorby.org/</url>
+		<scantime>1470</scantime>
+	</target>
+				<vulnerability confirmed="False">
+					<url>https://snorby.org/foo</url>
+					<type>EmailDisclosure</type>
+					<severity>Information</severity>
+					<certainty>95</certainty>
+
+					<rawrequest><rawrequest><![CDATA[REDACTED}]]></rawrequest></rawrequest>
+					<rawresponse><rawrequest><![CDATA[REDACTED}]]></rawrequest></rawresponse>
+					<extrainformation>
+					</extrainformation>
+
+						<proofs></proofs>
+
+
+						<classification>
+							<OWASP2013></OWASP2013>
+							<WASC>13</WASC>
+							<CWE>200</CWE>
+							<CAPEC>118</CAPEC>
+							<PCI31></PCI31>
+							<PCI32></PCI32>
+							<HIPAA></HIPAA>
+							<OWASPPC>C7</OWASPPC>
+
+								<CVSS>
+									<vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</vector>
+
+									<score>
+										<type>Base</type>
+										<value>5.3</value>
+										<severity>Medium</severity>
+									</score>
+									<score>
+										<type>Temporal</type>
+										<value>5.3</value>
+										<severity>Medium</severity>
+									</score>
+									<score>
+										<type>Environmental</type>
+										<value>5.3</value>
+										<severity>Medium</severity>
+									</score>
+
+								</CVSS>
+						</classification>
+
+				</vulnerability>
+				<vulnerability confirmed="False">
+					<url>https://snorby.org/bar</url>
+					<type>EmailDisclosure</type>
+					<severity>Information</severity>
+					<certainty>95</certainty>
+
+					<rawrequest><rawrequest><![CDATA[REDACTED}]]></rawrequest></rawrequest>
+					<rawresponse><rawrequest><![CDATA[REDACTED}]]></rawrequest></rawresponse>
+					<extrainformation>
+							<info name="Email Address(es)"><![CDATA[info@snorby.org]]></info>
+					</extrainformation>
+
+						<proofs></proofs>
+
+
+						<classification>
+							<OWASP2013></OWASP2013>
+							<WASC>13</WASC>
+							<CWE>200</CWE>
+							<CAPEC>118</CAPEC>
+							<PCI31></PCI31>
+							<PCI32></PCI32>
+							<HIPAA></HIPAA>
+							<OWASPPC>C7</OWASPPC>
+
+						</classification>
+
+				</vulnerability>
+
+</netsparker>

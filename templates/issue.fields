@@ -8,8 +8,6 @@ issue.classification_pci31
 issue.classification_pci32
 issue.classification_wasc
 issue.description
-issue.rawrequest
-issue.rawresponse
 issue.remedy
 issue.severity
 issue.title

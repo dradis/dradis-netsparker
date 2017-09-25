@@ -1,0 +1,8 @@
+#[URL]#
+%evidence.url%
+
+#[Request]#
+bc.. %evidence.rawrequest%
+
+#[Response]#
+bc.. %evidence.rawresponse%

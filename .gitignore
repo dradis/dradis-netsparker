@@ -1,4 +1,3 @@
-
 # Bundler config
 Gemfile.lock
 /.bundle/
@@ -9,3 +8,5 @@ Gemfile.lock
 
 # Gem artifacts
 /pkg/
+
+.DS_Store

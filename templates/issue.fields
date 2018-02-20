@@ -1,5 +1,12 @@
 issue.certainty
 issue.classification_capec
+issue.classification_cvss_vector
+issue.classification_cvss_base_value
+issue.classification_cvss_base_severity
+issue.classification_cvss_environmental_value
+issue.classification_cvss_environmental_severity
+issue.classification_cvss_temporal_value
+issue.classification_cvss_temporal_severity
 issue.classification_cwe
 issue.classification_hipaa
 issue.classification_owasp2013

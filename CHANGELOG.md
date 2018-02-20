@@ -1,3 +1,6 @@
+## Dradis Framework 4.0 ##
+*   Add CVSS fields for Issues.
+
 ## Dradis Framework 3.9 (January, 2018) ##
 
 *   No changes.

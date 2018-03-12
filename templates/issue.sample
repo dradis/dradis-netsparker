@@ -50,6 +50,25 @@ function openFlyout() {
     <PCI32></PCI32>
     <HIPAA>164.308(a)</HIPAA>
     <OWASPPC>C9</OWASPPC>
+    <CVSS>
+      <vector>CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N</vector>
+
+      <score>
+        <type>Base</type>
+        <value>5.7</value>
+        <severity>Medium</severity>
+      </score>
+      <score>
+        <type>Temporal</type>
+        <value>5.7</value>
+        <severity>Medium</severity>
+      </score>
+      <score>
+        <type>Environmental</type>
+        <value>5.7</value>
+        <severity>Medium</severity>
+      </score>
+    </CVSS>
   </classification>
 
 </vulnerability>

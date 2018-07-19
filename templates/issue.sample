@@ -4,7 +4,13 @@
   <severity>Information</severity>
   <certainty>100</certainty>
   ​<description><![CDATA[<p>Netsparker detected a missing <code>X-XSS-Protection</code> header which means that this website could be at risk of a Cross-site Scripting (XSS) attacks.</p>]]></description>
+  <impact><![CDATA[ <div>;This issue is reported as additional information only. There is no direct impact arising from this issue.</div> ]]></impact>
+  <actionsToTake><![CDATA[Placeholder Actions to Take for plugin manager configuration]]></actionsToTake>
   <remedy><![CDATA[<div>Add the X-XSS-Protection header with a value of "1; mode= block".<ul><li><pre class="code">X-XSS-Protection: 1; mode=block</pre></li></ul></div>]]></remedy>
+  <requiredSkillsForExploitation><![CDATA[ Placeholder Required Skills for Exploitation for Plugin Manager configuration ]]></requiredSkillsForExploitation>
+  <externalReferences><![CDATA[ <div><ul><li><a href='https://msdn.microsoft.com/en-us/library/cc288472(VS.85).aspx#_replace'>MSDN - Internet Explorer 8 Security Features</a></li><li><a href='https://blogs.msdn.com/b/ie/archive/2008/07/01/ie8-security-part-iv-the-xss-filter.aspx'>Internet Explorer 8 XSS Filter</a></li></ul></div> ]]></externalReferences>
+  <remedyReferences><![CDATA[ Placeholder Remedy References for Plugin Manager configuration ]]></remedyReferences>
+  <proofOfConcept><![CDATA[ Placeholder Proof of Concept for Plugin Manager configuration ]]></proofOfConcept>
 
   <rawrequest><![CDATA[GET /javascripts/responsive.js HTTP/1.1
 Host: test.testlab.com:3000

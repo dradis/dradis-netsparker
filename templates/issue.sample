@@ -42,7 +42,10 @@ function openFlyout() {
   });
 }
 ]]></rawresponse>
-  <extrainformation></extrainformation>
+  <extrainformation>
+    <info name="Example Name"><![CDATA[SESSIONID]]></info>
+  </extrainformation>
+
 
   <proofs></proofs>
 

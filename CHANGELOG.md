@@ -1,6 +1,12 @@
-## Dradis Framework 3.10 (August, 2018) ##
+## Dradis Framework 3.11 (November, 2018) ##
 
 *   Add CVSS fields for Issues.
+*   Add impact, actionsToTake, requiredSkillsForExploitation, externalReferences, remedyReferences, and extrainformation fields
+*   Update formatting to deal with HTML tags and entities
+
+## Dradis Framework 3.10 (September, 2018) ##
+
+*  Add CSS classification fields to Issues
 
 ## Dradis Framework 3.9 (January, 2018) ##
 

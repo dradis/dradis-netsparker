@@ -1,3 +1,4 @@
+issue.actions_to_take
 issue.certainty
 issue.classification_capec
 issue.classification_cvss_vector
@@ -15,7 +16,12 @@ issue.classification_pci31
 issue.classification_pci32
 issue.classification_wasc
 issue.description
+issue.external_references
+issue.extrainformation
+issue.impact
 issue.remedy
+issue.remedy_references
+issue.required_skills_for_exploitation
 issue.severity
 issue.title
 issue.type

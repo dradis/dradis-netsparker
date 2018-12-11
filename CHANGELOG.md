@@ -1,3 +1,7 @@
+## Dradis Framework 3.12 (XXXX, 2018)
+
+* Change alphabetical lists to bullet lists
+
 ## Dradis Framework 3.11 (November, 2018) ##
 
 *   Add CVSS fields for Issues.

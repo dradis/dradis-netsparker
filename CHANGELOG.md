@@ -1,4 +1,4 @@
-## Dradis Framework 3.12 (XXXX, 2018)
+## Dradis Framework 3.12 (March, 2019)
 
 * Change alphabetical lists to bullet lists
 

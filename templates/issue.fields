@@ -20,6 +20,7 @@ issue.description
 issue.external_references
 issue.extrainformation
 issue.impact
+issue.knownvulnerabilities
 issue.remedy
 issue.remedy_references
 issue.required_skills_for_exploitation

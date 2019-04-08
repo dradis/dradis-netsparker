@@ -51,7 +51,8 @@ function openFlyout() {
 
 
   <classification>
-    <OWASP2013></OWASP2013>
+    <OWASP2013>A2</OWASP2013>
+    <OWASP2017>A1</OWASP2013>
     <WASC></WASC>
     <CWE></CWE>
     <CAPEC></CAPEC>
@@ -79,5 +80,14 @@ function openFlyout() {
       </score>
     </CVSS>
   </classification>
+  
+  <knownvulnerabilities>
+    <knownvulnerability>
+      <title>Apache Denial of Service Vulnerabillity</title>
+      <severity>Low</severity>
+      <references>CVE-2013-1896</references>
+      <affectedversions>2.2.2 to 2.2.21</affectedversions>
+    </knownvulnerability>
+  </knownvulnerabilities>
 
 </vulnerability>

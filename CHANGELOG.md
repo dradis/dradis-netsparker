@@ -1,3 +1,7 @@
+## Dradis Framework 3.13 (XXXX, 2019)
+
+* Add Known Vulnerabilities and OWASP 2017 Classification as available Issue fields
+
 ## Dradis Framework 3.12 (March, 2019)
 
 * Change alphabetical lists to bullet lists

@@ -6,6 +6,9 @@
   ​<description><![CDATA[<p>Netsparker detected a missing <code>X-XSS-Protection</code> header which means that this website could be at risk of a Cross-site Scripting (XSS) attacks.</p>]]></description>
   <remedy><![CDATA[<div>Add the X-XSS-Protection header with a value of "1; mode= block".<ul><li><pre class="code">X-XSS-Protection: 1; mode=block</pre></li></ul></div>]]></remedy>
 
+  <vulnerableparametertype>GET</vulnerableparametertype>
+  <vulnerableparameter>value</vulnerableparameter>
+  <vulnerableparametervalue>1;expr 268409241 - 85983;x</vulnerableparametervalue>
   <rawrequest><![CDATA[GET /javascripts/responsive.js HTTP/1.1
 Host: test.testlab.com:3000
 Cache-Control: no-cache

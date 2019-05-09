@@ -6,3 +6,12 @@ bc.. %evidence.rawrequest%
 
 #[Response]#
 bc.. %evidence.rawresponse%
+
+#[VulnerableParameter]#
+bc. %evidence.vulnerableparameter%
+
+#[VulnerableParameterType]#
+bc. %evidence.vulnerableparametertype%
+
+#[VulnerableParameterValue]#
+bc. %evidence.vulnerableparametervalue%

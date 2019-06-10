@@ -1,4 +1,4 @@
-## Dradis Framework 3.13 (XXXX, 2019)
+## Dradis Framework 3.13 (June, 2019)
 
 * Add Known Vulnerabilities and OWASP 2017 Classification as available Issue fields
 * Add :vulnerableparameter, :vulnerableparametertype, and :vulnerableparametervalue Evidence fields

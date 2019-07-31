@@ -1,3 +1,7 @@
+## Dradis Framework 3.14 (August, 2019) ##
+
+*   No changes.
+
 ## Dradis Framework 3.13 (June, 2019)
 
 * Add Known Vulnerabilities and OWASP 2017 Classification as available Issue fields

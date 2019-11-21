@@ -1,3 +1,7 @@
+## Dradis Framework 3.15 (XXX, 2019) ##
+
+*   Fix link parsing of issue.external_references
+
 ## Dradis Framework 3.14 (August, 2019) ##
 
 *   No changes.

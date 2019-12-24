@@ -1,3 +1,7 @@
+## Dradis Framework 3.16 (XXXX, 2020) ##
+
+* Use the new built-in Title tag rather than the Type tag
+
 ## Dradis Framework 3.15 (November, 2019) ##
 
 *   Fix link parsing of issue.external_references

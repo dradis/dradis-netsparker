@@ -1,6 +1,6 @@
 ## Dradis Framework 3.17 (May, 2020) ##
 
-*   No changes.
+* Use the new <title> tag provided by Netsparker.
 
 ## Dradis Framework 3.16 (February, 2020) ##
 

@@ -1,6 +1,7 @@
 ## Dradis Framework 3.22 (April, 2021) ##
 
-*   No changes.
+*   Add new issue.classification_asvs40, issue.classification_nistsp80053, issue.classification_disastig, and issue.classification_iso27001 fields. 
+
 
 ## Dradis Framework 3.21 (February, 2021) ##
 

@@ -1,3 +1,7 @@
+## Dradis Framework 4.0.0 (July, 2021) ##
+
+*   No changes.
+
 ## Dradis Framework 3.22.1 (May, 2021) ##
 
 *   Add new issue.classification_asvs40, issue.classification_nistsp80053, issue.classification_disastig, and issue.classification_iso27001 fields.

@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   # until we bump Dradis Pro to 4.1.
   # s.add_dependency 'rails', '~> 4.1.1'
   spec.add_dependency 'dradis-plugins', '~> 4.0.0'
-  spec.add_dependency 'nokogiri', '~> 1.11.4'
+  spec.add_dependency 'nokogiri', '>= 1.12.5'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake', '~> 10.0'

@@ -1,4 +1,4 @@
-v4.0.1 (October 2021)
+v4.1.0 (October 2021)
   - Upgraded gems:
     - nokogiri
 

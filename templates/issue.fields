@@ -16,6 +16,7 @@ issue.classification_iso27001
 issue.classification_nistsp80053
 issue.classification_owasp2013
 issue.classification_owasp2017
+issue.classification_owasp2021
 issue.classification_owasppc
 issue.classification_pci31
 issue.classification_pci32

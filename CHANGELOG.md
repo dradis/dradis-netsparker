@@ -1,4 +1,4 @@
-v4.#.# (MMMM YYYY)
+v4.7.0 (February 2023)
   - Add issue.classification_owasp2021 as a new avaiable field
 
 v4.6.0 (November 2022)

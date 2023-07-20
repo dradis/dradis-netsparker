@@ -1,3 +1,6 @@
+v#.#.# (MMMM YYYY)
+  - Add `evidence.extrainformation` & `evidence.proofs` as available fields
+
 v4.9.0 (June 2023)
   - No changes
 

@@ -39,11 +39,18 @@ function openFlyout() {
   });
 }
 ]]></rawresponse>
-  <extrainformation></extrainformation>
-
-  <proofs></proofs>
-
-
+  <extrainformation>
+      <info>
+          <name>Example Name</name>
+          <value><![CDATA[Example Value]]></value>
+      </info>
+  </extrainformation>
+  <proofs>
+      <proof>
+          <key><![CDATA[example key]]></key>
+          <value><![CDATA[example value.]]></value>
+      </proof>
+  </proofs>
   <classification>
     <OWASP2013></OWASP2013>
     <WASC></WASC>

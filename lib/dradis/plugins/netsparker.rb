@@ -7,5 +7,6 @@ end
 
 require 'dradis/plugins/netsparker/engine'
 require 'dradis/plugins/netsparker/field_processor'
+require 'dradis/plugins/netsparker/mapping'
 require 'dradis/plugins/netsparker/importer'
 require 'dradis/plugins/netsparker/version'

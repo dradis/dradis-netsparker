@@ -40,7 +40,7 @@ module Dradis::Plugins::Netsparker
       @doc.xpath('/netsparker/vulnerability').each do |xml_vuln|
         process_vuln(xml_vuln, host_node)
       end
-      
+
     end
 
     def process_vuln(xml_vuln, host_node)
@@ -49,14 +49,14 @@ module Dradis::Plugins::Netsparker
       # Create Issues using the Issue template
       logger.info{ "\t\t => Creating new Issue: #{type}" }
 
-      issue_text = template_service.process_template(template: 'issue', data: xml_vuln)
+      issue_text = mapping_service.apply_mapping(source: 'issue', data: xml_vuln)
       issue = content_service.create_issue(text: issue_text, id: type)
 
       # Create Evidence using the Evidence template
       # Associate the Evidence with the Node and Issue
       logger.info{ "\t\t => Creating new evidence" }
-      evidence_content = template_service.process_template(
-        template: 'evidence', data: xml_vuln
+      evidence_content = mapping_service.apply_mapping(
+        source: 'evidence', data: xml_vuln
       )
       content_service.create_evidence(
         issue: issue, node: host_node, content: evidence_content

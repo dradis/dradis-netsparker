@@ -2,6 +2,7 @@ module Dradis::Plugins::Netsparker
   module Mapping
     DEFAULT_MAPPING = {
       evidence: {
+        'ExtraInformation' => '{{ netsparker[evidence.extrainformation] }}',
         'URL' => '{{ netsparker[evidence.url] }}',
         'Request' => 'bc.. {{ netsparker[evidence.rawrequest] }}',
         'Response' => 'bc.. {{ netsparker[evidence.rawresponse] }}',
@@ -20,6 +21,7 @@ module Dradis::Plugins::Netsparker
 
     SOURCE_FIELDS = {
       evidence: [
+        'evidence.extrainformation',
         'evidence.rawrequest',
         'evidence.rawresponse',
         'evidence.url',

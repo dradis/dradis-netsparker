@@ -1,5 +1,5 @@
-v4.X.X (XXXX 2024)
- - Add evidence.extrainformation as an available field
+v4.13.0 (XXXX 2024)
+ - Add extrainformation as an available evidence field
 
 v4.12.0 (May 2024)
  - Migrate integration to use Mappings Manager

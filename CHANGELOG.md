@@ -1,4 +1,4 @@
-v4.13.0 (XXXX 2024)
+v4.13.0 (July 2024)
  - Add extrainformation as an available evidence field
 
 v4.12.0 (May 2024)

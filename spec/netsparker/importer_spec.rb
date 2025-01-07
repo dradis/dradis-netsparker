@@ -1,16 +1,16 @@
 require 'rails_helper'
 require 'ostruct'
 
-require File.expand_path('../../../dradis-plugins/spec/support/spec_macros.rb', __FILE__)
+require File.expand_path('../../../../dradis-plugins/spec/support/spec_macros.rb', __FILE__)
 
 include Dradis::Plugins::SpecMacros
 
 module Dradis::Plugins
   describe 'Netsparker upload plugin' do
     before(:each) do
-      @fixtures_dir = File.expand_path('../fixtures/files/', __FILE__)
+      @fixtures_dir = File.expand_path('../../fixtures/files/', __FILE__)
 
-      stub_content_service(Dradis::Plugins::Netsparker)
+      stub_content_service
 
       @importer = Dradis::Plugins::Netsparker::Importer.new(
         content_service: @content_service

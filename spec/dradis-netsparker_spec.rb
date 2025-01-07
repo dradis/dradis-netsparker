@@ -1,41 +1,20 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'ostruct'
+
+require File.expand_path('../../../dradis-plugins/spec/support/spec_macros.rb', __FILE__)
+
+include Dradis::Plugins::SpecMacros
 
 module Dradis::Plugins
   describe 'Netsparker upload plugin' do
     before(:each) do
-      # Stub template service
-      templates_dir = File.expand_path('../../templates', __FILE__)
-      expect_any_instance_of(TemplateService).to \
-        receive(:default_templates_dir).and_return(templates_dir)
+      @fixtures_dir = File.expand_path('../fixtures/files/', __FILE__)
 
-      plugin = Dradis::Plugins::Netsparker
-
-      @content_service = Dradis::Plugins::ContentService::Base.new(
-        logger: Logger.new(STDOUT),
-        plugin: plugin
-      )
+      stub_content_service(Dradis::Plugins::Netsparker)
 
       @importer = Dradis::Plugins::Netsparker::Importer.new(
         content_service: @content_service
       )
-
-      # Stub dradis-plugins methods
-      #
-      # They return their argument hashes as objects mimicking
-      # Nodes, Issues, etc
-      allow(@content_service).to receive(:create_node) do |args|
-        OpenStruct.new(args)
-      end
-      allow(@content_service).to receive(:create_note) do |args|
-        OpenStruct.new(args)
-      end
-      allow(@content_service).to receive(:create_issue) do |args|
-        OpenStruct.new(args)
-      end
-      allow(@content_service).to receive(:create_evidence) do |args|
-        OpenStruct.new(args)
-      end
     end
 
     it 'creates the expected Node, Issue, and Evidence from the example file' do
@@ -53,7 +32,7 @@ module Dradis::Plugins
         expect(args[:node].label).to eq('localhost')
       end
 
-      @importer.import(file: 'spec/fixtures/files/example.xml')
+      @importer.import(file: @fixtures_dir + '/example.xml')
     end
 
     it 'creates than one instance of Evidence for a single Issue' do
@@ -77,14 +56,14 @@ module Dradis::Plugins
         expect(args[:node].label).to eq('snorby.org')
       end.once
 
-      @importer.import(file: 'spec/fixtures/files/example-evidence.xml')
+      @importer.import(file: @fixtures_dir + '/example-evidence.xml')
     end
 
     it 'creates multiple nodes for additional websites' do
       expect(@content_service).to receive(:create_node).with(hash_including label: 'snorby.org', type: :host)
       expect(@content_service).to receive(:create_node).with(hash_including label: 'example.com', type: :host)
 
-      @importer.import(file: 'spec/fixtures/files/multiple-nodes.xml')
+      @importer.import(file: @fixtures_dir + '/multiple-nodes.xml')
     end
   end
 end

@@ -58,15 +58,22 @@ module Dradis::Plugins::Netsparker
         source: 'evidence', data: xml_vuln
       )
 
-      url = xml_vuln.at_xpath('./url').text
-      node =
-        # If the URL is a valid URI and is not the same as the host_node, create a new node
-        if url =~ URI::ABS_URI && URI(url).host != host_node.label
-          content_service.create_node(label: URI(url).host, type: :host)
-        end
+      node = get_node(xml_vuln, host_node)
+
       content_service.create_evidence(
-        issue: issue, node: node || host_node, content: evidence_content
+        issue: issue, node: node, content: evidence_content
       )
+    end
+
+    def get_node(xml_vuln, host_node)
+      url = xml_vuln.at_xpath('./url').text
+
+      # If the URL is a valid URI and is not the same as the host_node, create a new node
+      if url =~ URI::ABS_URI && URI(url).host != host_node.label
+        content_service.create_node(label: URI(url).host, type: :host)
+      else
+        host_node
+      end
     end
   end
 end

@@ -48,14 +48,14 @@ module Dradis::Plugins::Netsparker
       # Create Issues using the Issue template
       logger.info { "\t\t => Creating new Issue: #{type}" }
 
-      issue_text = template_service.process_template(template: 'issue', data: xml_vuln)
+      issue_text = mapping_service.apply_mapping(source: 'issue', data: xml_vuln)
       issue = content_service.create_issue(text: issue_text, id: type)
 
       # Create Evidence using the Evidence template
       # Associate the Evidence with the Node and Issue
       logger.info { "\t\t => Creating new evidence" }
-      evidence_content = template_service.process_template(
-        template: 'evidence', data: xml_vuln
+      evidence_content = mapping_service.apply_mapping(
+        source: 'evidence', data: xml_vuln
       )
 
       url = xml_vuln.at_xpath('./url').text

@@ -1,5 +1,15 @@
-v4.12.0 (XXXX 2024)
-  - Update Dradis links in README
+v4.15.0 (December 2024)
+  - No changes
+
+v4.14.0 (October 2024)
+  - No changes
+
+v4.13.0 (July 2024)
+ - Add extrainformation as an available evidence field
+
+v4.12.0 (May 2024)
+ - Migrate integration to use Mappings Manager
+ - Update Dradis links in README
 
 v4.11.0 (January 2024)
   - No changes

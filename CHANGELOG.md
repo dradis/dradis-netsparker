@@ -1,3 +1,6 @@
+v4.16.0 (Month 2024)
+  - Add support for Additional Websites as nodes
+
 v4.15.0 (December 2024)
   - No changes
 
